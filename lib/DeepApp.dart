@@ -4,6 +4,9 @@ import 'dart:ui';
 import './Pages/MainPage.dart';
 
 
+/// Main Application.
+///
+/// Initialize and set the app config.
 class DeepApp extends StatelessWidget {
 
     void setUp() {
