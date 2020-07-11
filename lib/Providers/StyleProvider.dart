@@ -21,7 +21,7 @@ class StyleProvider {
                     'Painting',
                     'Painting simil effect.',
                     'painting',
-                    'icon');
+                    'assets/icons/painting.jpeg');
     }
 
     static StyleModel textureStyle() {
@@ -29,7 +29,7 @@ class StyleProvider {
                     'Texture',
                     'Trippy with some texture changes.',
                     'texture',
-                    'icon');
+                    'assets/icons/texture.jpeg');
     }
 
     static StyleModel trippyStyle() {
@@ -37,7 +37,7 @@ class StyleProvider {
                     'Trippy',
                     'Trippy effect.',
                     'trippy',
-                    'icon');
+                    'assets/icons/trippy.jpeg');
     }
 
     static StyleModel sydBarrettStyle() {
@@ -45,7 +45,7 @@ class StyleProvider {
                     'Syd Barrett',
                     'Too trippy and weird.',
                     'barret',
-                    'icon');
+                    'assets/icons/barret.jpeg');
     }
 
     static StyleModel whatEverStyle() {
@@ -53,7 +53,7 @@ class StyleProvider {
                     'Whatever',
                     'Whatever, just for fun.',
                     'whatever',
-                    'icon');
+                    'assets/icons/whatever.jpeg');
     }
 
 }

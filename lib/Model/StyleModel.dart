@@ -13,10 +13,5 @@ class StyleModel {
     /// Local icon path
     String iconPath;
 
-    StyleModel(String name, String description, String path, String iconPath) {
-        this.name = name;
-        this.description = description;
-        this.path = path;
-        this.iconPath = iconPath;
-    }
+    StyleModel(this.name, this.description, this.path, this.iconPath);
 }

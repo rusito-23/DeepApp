@@ -24,17 +24,19 @@ class DeepApp extends StatelessWidget {
             accentColor: Colors.black,
             textTheme: TextTheme(
                 headline1: TextStyle(fontSize: 60.0),
+                headline2: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w100),
+                headline3: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w100),
             ),
         );
     }
 
     @override
     Widget build(BuildContext context) {
-        this.setUp();
+        setUp();
 
         return MaterialApp(
             title: 'Deep Dream App',
-            theme: this.createTheme(),
+            theme: createTheme(),
             home: MainPage(),
         );
     }
