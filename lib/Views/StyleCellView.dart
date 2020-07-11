@@ -12,17 +12,21 @@ class StyleCellView extends StatelessWidget {
     Widget iconView(BuildContext context) {
         return ClipRRect(
             borderRadius: BorderRadius.circular(100.0),
-            child: Image.asset(
-                style.iconPath,
-                width: 100,
-                height: 100,
-                fit: BoxFit.fill,
-            ),
+            child: GestureDetector(
+                child: Image.asset(
+                            style.iconPath,
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.fill,
+                ),
+                onTap: () => print('TAPPED!')
+            )
         );
     }
 
     Widget styleNameView(BuildContext context) {
         return Container(
+            margin: const EdgeInsets.only(top: 10),
             child: Text(style.name,
                         style: Theme.of(context).textTheme.headline3)
         );

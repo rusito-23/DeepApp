@@ -11,7 +11,7 @@ class TitleView extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
         return Container(
-            margin: const EdgeInsets.only(top: 100.0),
+            margin: const EdgeInsets.only(top: 60),
             child: Text(title, style: Theme.of(context).textTheme.headline1)
         );
     }

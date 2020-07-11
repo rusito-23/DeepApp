@@ -23,9 +23,9 @@ class DeepApp extends StatelessWidget {
             primaryColor: Colors.white,
             accentColor: Colors.black,
             textTheme: TextTheme(
-                headline1: TextStyle(fontSize: 60.0),
-                headline2: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w100),
-                headline3: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w100),
+                headline1: TextStyle(fontSize: 60),
+                headline2: TextStyle(fontSize: 20, fontWeight: FontWeight.w100),
+                headline3: TextStyle(fontSize: 15, fontWeight: FontWeight.w100),
             ),
         );
     }
