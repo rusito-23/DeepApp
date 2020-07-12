@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:ui';
-import './Pages/MainPage.dart';
-import './Pages/PickerPage.dart';
+import './Screen/MainScreen.dart';
 
 
 /// Main Application.
@@ -40,7 +39,7 @@ class DeepApp extends StatelessWidget {
         return MaterialApp(
             title: 'Deep Dream App',
             theme: createTheme(),
-            home: MainPage(),
+            home: MainScreen(),
         );
     }
 

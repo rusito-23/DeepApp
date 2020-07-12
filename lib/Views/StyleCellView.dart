@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Model/StyleModel.dart';
-import '../Pages/PickerPage.dart';
+import '../Screen/PickerScreen.dart';
 
 
 /// Style View
@@ -20,9 +20,7 @@ class StyleCellView extends StatelessWidget {
                             height: 100,
                             fit: BoxFit.fill,
                 ),
-                onTap: () => Navigator.push(context,
-                                MaterialPageRoute(
-                                builder: (context) => PickerPage(_style))),
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PickerScreen(_style))),
             )
         );
     }

@@ -3,11 +3,11 @@ import '../Views/TextViews.dart';
 import '../Views/StylesGridView.dart';
 
 
-/// Main Initial Page 
+/// Main Initial Screen
 ///
 /// Shows the app title, description and available styles. 
-class MainPage extends StatelessWidget {
-    MainPage({Key key}) : super(key: key);
+class MainScreen extends StatelessWidget {
+    MainScreen({Key key}) : super(key: key);
 
     @override
     Widget build(BuildContext context) {
