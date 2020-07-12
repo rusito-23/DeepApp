@@ -23,7 +23,7 @@ class StylesGridView extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 30),
                 alignment: Alignment.center,
                 child: SingleChildScrollView(
-                    child:Wrap(
+                    child: Wrap(
                         runSpacing: runSpacing,
                         spacing: spacing,
                         alignment: WrapAlignment.center,
