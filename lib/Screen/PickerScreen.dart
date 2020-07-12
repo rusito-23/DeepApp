@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:image_picker_modern/image_picker_modern.dart';
 import '../Screen/ProcessScreen.dart';
 import '../Views/TextViews.dart';
-import '../Views/LoadingView.dart';
+import '../Views/ButtonViews.dart';
 import '../Model/StyleModel.dart';
 
 
@@ -29,21 +29,19 @@ class PickerScreen extends StatelessWidget {
         return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-                Expanded(child:GestureDetector(
-                    child: Column(
-                            children: [
-                                Icon(Icons.photo_library),
-                                LabelView('Library')
-                            ]),
-                    onTap: () => startPicker(context, ImageSource.gallery)
+                Expanded(child: RoundButtonView(
+                        Icon(Icons.photo_library),
+                        'Library',
+                        () => startPicker(context, ImageSource.gallery),
+                        width: 60,
+                        height: 60,
                 )),
-                Expanded(child:GestureDetector(
-                    child: Column(
-                            children: [
-                                Icon(Icons.photo_camera),
-                                LabelView('Camera')
-                            ]),
-                    onTap: () => startPicker(context, ImageSource.camera)
+                Expanded(child: RoundButtonView(
+                        Icon(Icons.photo_camera),
+                        'Camera',
+                        () => startPicker(context, ImageSource.camera),
+                        width: 60,
+                        height: 60,
                 )),
             ]
         );

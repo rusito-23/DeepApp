@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Model/StyleModel.dart';
 import '../Screen/PickerScreen.dart';
+import '../Views/ButtonViews.dart';
 
 
 /// Style View
@@ -10,21 +11,6 @@ class StyleCellView extends StatelessWidget {
     StyleModel _style;
     StyleCellView(this._style);
 
-    Widget iconView(BuildContext context) {
-        return ClipRRect(
-            borderRadius: BorderRadius.circular(100.0),
-            child: GestureDetector(
-                child: Image.asset(
-                            _style.iconPath,
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.fill,
-                ),
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PickerScreen(_style))),
-            )
-        );
-    }
-
     Widget styleNameView(BuildContext context) {
         return Container(
             margin: const EdgeInsets.only(top: 10),
@@ -33,13 +19,23 @@ class StyleCellView extends StatelessWidget {
         );
     }
 
+    Image styleIcon() {
+        return Image.asset(_style.iconPath,
+                           fit: BoxFit.fill);
+    }
+
+    void showPickerScreen(BuildContext context) {
+        Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PickerScreen(_style)));
+    }
+
     @override
     Widget build(BuildContext context) {
         return Center(child:
-            Column(children: <Widget>[
-                iconView(context),
-                styleNameView(context),
-            ])
+                RoundButtonView(
+                    styleIcon(),
+                    _style.name,
+                    () => showPickerScreen(context))
         );
     }
 
