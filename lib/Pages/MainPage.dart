@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Views/TitleView.dart';
-import '../Views/SubtitleView.dart';
+import '../Views/TextViews.dart';
 import '../Views/StylesGridView.dart';
 
 
@@ -16,8 +15,8 @@ class MainPage extends StatelessWidget {
             body: Center(
                 child: Column(
                     children: <Widget>[
-                        TitleView('DEEP APP'),
-                        SubtitleView('AVAILABLE STYLES'),
+                        TitleView('Deep App'),
+                        SubtitleView('Available Styles'),
                         StylesGridView(),
                     ],
                 ),

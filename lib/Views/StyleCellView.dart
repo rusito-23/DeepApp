@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
 import '../Model/StyleModel.dart';
+import '../Pages/PickerPage.dart';
 
 
 /// Style View
 ///
 /// Used to render the style information within the Styles Grid.
 class StyleCellView extends StatelessWidget {
-    StyleModel style;
-    StyleCellView(this.style);
+    StyleModel _style;
+    StyleCellView(this._style);
 
     Widget iconView(BuildContext context) {
         return ClipRRect(
             borderRadius: BorderRadius.circular(100.0),
             child: GestureDetector(
                 child: Image.asset(
-                            style.iconPath,
+                            _style.iconPath,
                             width: 100,
                             height: 100,
                             fit: BoxFit.fill,
                 ),
-                onTap: () => print('TAPPED!')
+                onTap: () => Navigator.push(context,
+                                MaterialPageRoute(
+                                builder: (context) => PickerPage(_style))),
             )
         );
     }
@@ -27,7 +30,7 @@ class StyleCellView extends StatelessWidget {
     Widget styleNameView(BuildContext context) {
         return Container(
             margin: const EdgeInsets.only(top: 10),
-            child: Text(style.name,
+            child: Text(_style.name.toUpperCase(),
                         style: Theme.of(context).textTheme.headline3)
         );
     }

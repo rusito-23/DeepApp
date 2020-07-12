@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:ui';
 import './Pages/MainPage.dart';
+import './Pages/PickerPage.dart';
 
 
 /// Main Application.
@@ -24,8 +25,10 @@ class DeepApp extends StatelessWidget {
             accentColor: Colors.black,
             textTheme: TextTheme(
                 headline1: TextStyle(fontSize: 60),
-                headline2: TextStyle(fontSize: 20, fontWeight: FontWeight.w100),
-                headline3: TextStyle(fontSize: 15, fontWeight: FontWeight.w100),
+                headline2: TextStyle(fontSize: 20,
+                                     fontWeight: FontWeight.w100),
+                headline3: TextStyle(fontSize: 15,
+                                     fontWeight: FontWeight.w100),
             ),
         );
     }
