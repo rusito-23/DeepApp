@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../Model/StyleModel.dart';
 import '../Screen/PickerScreen.dart';
 import '../Views/ButtonViews.dart';
+import '../Views/TextViews.dart';
 
 
 /// Style View
@@ -14,8 +15,7 @@ class StyleCellView extends StatelessWidget {
     Widget styleNameView(BuildContext context) {
         return Container(
             margin: const EdgeInsets.only(top: 10),
-            child: Text(_style.name.toUpperCase(),
-                        style: Theme.of(context).textTheme.headline3)
+            child: LabelView(_style.name.toUpperCase()),
         );
     }
 

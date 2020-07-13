@@ -3,16 +3,40 @@ import 'package:flutter/material.dart';
 
 /// Title View
 class TitleView extends StatelessWidget {
-    String _title;
-    TitleView(this._title);
+    final String _title;
+    const TitleView(this._title);
 
     @override
     Widget build(BuildContext context) {
         return Container(
-            margin: const EdgeInsets.only(top: 60),
+            margin: const EdgeInsets.all(10),
             child: Text(_title.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.headline1)
+                style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.w100,
+                    color: Colors.white,
+                ),
+            )
+        );
+    }
+}
+
+/// Main Subitle View
+class MainSubtitleView extends StatelessWidget {
+    final String _title;
+    const MainSubtitleView(this._title);
+
+    @override
+    Widget build(BuildContext context) {
+        return Container(
+            margin: const EdgeInsets.all(10),
+            child: Text(_title.toUpperCase(),
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w100,
+                    color: Colors.white,
+                ),
+            )
         );
     }
 }

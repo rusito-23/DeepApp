@@ -18,7 +18,6 @@ class ProcessScreen extends StatelessWidget {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                        SubtitleView('Selected Image'),
                         Container(
                             margin: const EdgeInsets.only(top: 20),
                             child:Image.file(
@@ -31,7 +30,7 @@ class ProcessScreen extends StatelessWidget {
                         Container(
                             margin: const EdgeInsets.only(top: 20),
                             child: RoundButtonView(
-                                Icon(Icons.lens),
+                                Icon(Icons.blur_on),
                                 'Dream!',
                                 () => print('Deep dream'),
                                 height: 50,
