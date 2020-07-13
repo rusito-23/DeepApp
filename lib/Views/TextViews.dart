@@ -12,7 +12,7 @@ class TitleView extends StatelessWidget {
             margin: const EdgeInsets.all(10),
             child: Text(_title.toUpperCase(),
                 style: TextStyle(
-                    fontSize: 50,
+                    fontSize: 38,
                     fontWeight: FontWeight.w100,
                     color: Colors.white,
                 ),

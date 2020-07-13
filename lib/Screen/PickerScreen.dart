@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker_modern/image_picker_modern.dart';
+import '../Helpers/Strings.dart';
 import '../Screen/ProcessScreen.dart';
 import '../Views/TextViews.dart';
 import '../Views/ButtonViews.dart';
@@ -31,14 +32,14 @@ class PickerScreen extends StatelessWidget {
             children: <Widget>[
                 Expanded(child: RoundButtonView(
                         Icon(Icons.photo_library),
-                        'Library',
+                        Buttons.LIBRARY,
                         () => startPicker(context, ImageSource.gallery),
                         width: 60,
                         height: 60,
                 )),
                 Expanded(child: RoundButtonView(
                         Icon(Icons.photo_camera),
-                        'Camera',
+                        Buttons.CAMERA,
                         () => startPicker(context, ImageSource.camera),
                         width: 60,
                         height: 60,
@@ -53,9 +54,9 @@ class PickerScreen extends StatelessWidget {
             body: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                    SubtitleView('You selected style'),
+                    SubtitleView(Titles.PICKER_SCREEN_TITLE),
                     LargeTextView(_style.name),
-                    SubtitleView('Please select a source to continue'),
+                    SubtitleView(Titles.PICKER_SCREEN_SUBTITLE),
                     Container(
                         margin: const EdgeInsets.only(top: 30),
                         child: sourcesButtonsView(context)

@@ -20,7 +20,7 @@ class StyleCellView extends StatelessWidget {
     }
 
     Image styleIcon() {
-        return Image.asset(_style.iconPath,
+        return Image.memory(_style.icon,
                            fit: BoxFit.fill);
     }
 

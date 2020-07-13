@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 
 class LoadingView extends StatelessWidget {
+    bool transparent;
+    LoadingView({this.transparent = false});
 
     static void startLoading(BuildContext context) {
         Navigator.of(context).push(PageRouteBuilder(
@@ -16,10 +18,16 @@ class LoadingView extends StatelessWidget {
         Navigator.of(context).pop();
     }
 
+    BoxDecoration decoration() {
+        return transparent ? 
+                null :
+                BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5));
+    }
+
     @override
     Widget build(BuildContext context) {
         return Container(
-            decoration: BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
+            decoration: decoration(),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

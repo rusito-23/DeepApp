@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
+import '../Helpers/Strings.dart';
 import '../Views/TextViews.dart';
 import '../Views/ButtonViews.dart';
 
@@ -31,7 +32,7 @@ class ProcessScreen extends StatelessWidget {
                             margin: const EdgeInsets.only(top: 20),
                             child: RoundButtonView(
                                 Icon(Icons.blur_on),
-                                'Dream!',
+                                Buttons.DREAM,
                                 () => print('Deep dream'),
                                 height: 50,
                                 width: 50,
