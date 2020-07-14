@@ -3,6 +3,8 @@ import 'dart:io';
 import '../Helpers/Strings.dart';
 import '../Views/TextViews.dart';
 import '../Views/ButtonViews.dart';
+import '../Views/LoadingView.dart';
+import '../Views/ErrorView.dart';
 import '../Model/StyleModel.dart';
 import '../Service/DeepAPIService.dart';
 
@@ -22,16 +24,34 @@ class ProcessScreen extends StatefulWidget {
 
 class _ProcessScreenState extends State<ProcessScreen> {
     File _dreamed_image;
+    bool _error = false;
 
-    Future<void> _dream() async {
-        File dreamed = await DeepAPIService.shared.processDream(widget._image, widget._style);
-        setState(() {
-            _dreamed_image = dreamed;
+    Future<void> _dream(BuildContext context) async {
+        LoadingView.startLoading(context);
+        _error = false;
+        await DeepAPIService.shared.processDream(widget._image, widget._style).then((File _dreamed) {
+            // on dream sucess
+            setState(() {
+                _error = false;
+                _dreamed_image = _dreamed;
+            });
+        }).catchError((error) {
+            // on dream error
+            setState(() {
+                _error = true;
+                _dreamed_image = null;
+            });
+        }).whenComplete(() {
+            LoadingView.stopLoading(context);
         });
     }
 
     @override
     Widget build(BuildContext context) {
+        if (_error) {
+            return ErrorView(Errors.DREAM_ERROR);
+        }
+
         return Scaffold(
             body: Center(
                 child: Column(
@@ -55,7 +75,7 @@ class _ProcessScreenState extends State<ProcessScreen> {
                             child: RoundButtonView(
                                 Icon(Icons.blur_on),
                                 Buttons.DREAM,
-                                _dream,
+                                () => _dream(context),
                                 height: 50,
                                 width: 50,
                             )

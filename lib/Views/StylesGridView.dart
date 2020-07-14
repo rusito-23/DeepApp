@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../Helpers/Strings.dart';
 import '../Model/StyleModel.dart';
 import '../Views/StyleCellView.dart';
 import '../Views/LoadingView.dart';
+import '../Views/ErrorView.dart';
 import '../Views/TextViews.dart';
 
 
@@ -29,12 +31,7 @@ class StylesGridView extends StatelessWidget {
                 )
             );
         } else if (_snapshot.hasError) {
-            return SliverFillRemaining(child:
-                Column(children: [
-                    TitleView('Oops!'),
-                    SubtitleView('An error occurred while loading the styles'),
-                ])
-            );
+            return SliverFillRemaining(child: ErrorView(Errors.STYLES_ERROR));
         } else {
             return SliverFillRemaining(
                 child: LoadingView(transparent: true)

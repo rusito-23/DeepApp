@@ -19,3 +19,12 @@ class Buttons {
     static final CAMERA = 'CAMERA';
     static final DREAM = 'DREAM!';
 }
+
+
+/// Error Messages
+
+class Errors {
+    static final OOPS = 'Oops!';
+    static final STYLES_ERROR = 'An error occured while loading the styles!';
+    static final DREAM_ERROR = 'An error occured while loading the styles!';
+}
