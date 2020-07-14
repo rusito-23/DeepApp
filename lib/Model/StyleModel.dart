@@ -16,7 +16,7 @@ class StyleModel {
         return StyleModel(
             name: json['name'],
             description: json['description'],
-            path: json['title'],
+            path: json['path'],
             icon: Base64Decoder().convert(json['icon']),
         );
     } 

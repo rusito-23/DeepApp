@@ -20,7 +20,7 @@ class PickerScreen extends StatelessWidget {
     Future<void> startPicker(BuildContext context, ImageSource source) async {
         var image = await ImagePicker.pickImage(source: source);
         if ( image != null ) {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => ProcessScreen(image)));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ProcessScreen(image, _style)));
         }
     }
     
