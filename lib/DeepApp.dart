@@ -37,6 +37,7 @@ class DeepApp extends StatelessWidget {
         return MaterialApp(
             title: 'Deep Dream App',
             theme: createTheme(),
+            themeMode: ThemeMode.dark,
             home: MainScreen(),
         );
     }

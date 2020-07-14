@@ -25,6 +25,6 @@ class Buttons {
 
 class Errors {
     static final OOPS = 'Oops!';
-    static final STYLES_ERROR = 'An error occured while loading the styles!';
-    static final DREAM_ERROR = 'An error occured while loading the styles!';
+    static final STYLES_ERROR = 'AN ERROR OCCURED WHILE LOADING THE STYLES';
+    static final DREAM_ERROR = 'AN ERROR OCCURED WHILE PROCESSING THE DREAM';
 }
