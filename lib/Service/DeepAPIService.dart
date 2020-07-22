@@ -8,6 +8,14 @@ import '../Model/StyleModel.dart';
 import '../Helpers/Logger.dart';
 
 
+/// Deep API Service Result
+class DeepAPIResult {
+    String path;
+    File image;
+    DeepAPIResult(this.path, this.image);
+}
+
+
 /// Deep API Service
 ///
 /// Performs all API calls.
@@ -44,13 +52,7 @@ class DeepAPIService {
         }
     }
 
-    Future<File> createTempFile(StyleModel _style) async {
-        Directory tempDir = await getTemporaryDirectory();
-        String tempPath = tempDir.path;
-        return File('${tempPath}/${_style.path}.jpeg');
-    }
-
-    Future<File> processDream(File _image, StyleModel _style) async {
+    Future<DeepAPIResult> processDream(File _image, StyleModel _style) async {
         // create image request
         var stream = new ByteStream(DelegatingStream.typed(_image.openRead()));
         var length = await _image.length();
@@ -70,10 +72,9 @@ class DeepAPIService {
         });
 
         // create temporary file
-        var file = await createTempFile(_style).catchError((error) {
-            logger.e('Temp file created failed with error - ${error}');
-            throw Exception('Failed to dream');
-        });
+        Directory tempDir = await getTemporaryDirectory();
+        String tempPath = tempDir.path;
+        var file = File('${tempPath}/${_style.path}.jpeg');
 
         // write byte stream into temp file
         var sink = file.openWrite();
@@ -82,7 +83,9 @@ class DeepAPIService {
             throw Exception('Failed to dream');
         });
         sink.close();
-        return file;
+
+        // create result
+        return DeepAPIResult(tempPath, file);
   }
 
 }

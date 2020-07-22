@@ -14,10 +14,17 @@ dependencies:
   http: ^0.12.1
   logger: ^0.9.1
   path_provider: ^1.6.11
+  wc_flutter_share: ^0.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.7.5
 
 flutter:
   uses-material-design: true
+
+flutter_icons:
+  image_path: "icon/icon.png" 
+  android: true
+  ios: true

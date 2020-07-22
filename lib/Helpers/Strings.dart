@@ -18,6 +18,7 @@ class Buttons {
     static final LIBRARY = 'LIBRARY';
     static final CAMERA = 'CAMERA';
     static final DREAM = 'DREAM!';
+    static final SHARE = 'SHARE';
 }
 
 
@@ -27,4 +28,11 @@ class Errors {
     static final OOPS = 'Oops!';
     static final STYLES_ERROR = 'AN ERROR OCCURED WHILE LOADING THE STYLES';
     static final DREAM_ERROR = 'AN ERROR OCCURED WHILE PROCESSING THE DREAM';
+}
+
+
+/// Pop Up
+
+class PopUp {
+    static final SHARE = 'SHARE YOUR DREAM!';
 }

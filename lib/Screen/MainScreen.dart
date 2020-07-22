@@ -46,6 +46,7 @@ class _MainScreenState extends State<MainScreen> {
                     controller: _scrollController,
                     slivers: [
                         SliverAppBar(
+                            brightness: Brightness.dark,
                             pinned: true,
                             expandedHeight: 160,
                             backgroundColor: Colors.transparent,

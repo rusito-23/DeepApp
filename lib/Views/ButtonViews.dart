@@ -13,11 +13,17 @@ class RoundButtonView extends StatefulWidget {
     final double width;
     final double height;
     final double borderRadius;
+    final bool active;
 
     RoundButtonView(this._image,
                     this._label,
                     this._callback,
-                    { this.width = 100, this.height = 100, this.borderRadius = 80 });
+                    {
+                        this.width = 100,
+                        this.height = 100,
+                        this.borderRadius = 80,
+                        this.active = true,
+                    });
 
     @override
     _RoundButtonViewState createState() => _RoundButtonViewState();
@@ -40,7 +46,7 @@ class _RoundButtonViewState extends State<RoundButtonView> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(widget.borderRadius),
                 border: Border.all(
-                    color: _tapped ? Colors.grey : Colors.white,
+                    color: _tapped ? Colors.grey : (widget.active ? Colors.white: Colors.grey),
                     width: 3,
                 )
             ),
@@ -54,7 +60,7 @@ class _RoundButtonViewState extends State<RoundButtonView> {
     @override
     Widget build(BuildContext context) {
         return GestureDetector(
-            onTap: widget._callback,
+            onTap: widget.active ? widget._callback : () {},
             onTapDown: (_) => onTap(),
             onTapUp: (_) => onTap(),
             onTapCancel: () => onTap(),
