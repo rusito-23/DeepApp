@@ -1,0 +1,34 @@
+PODS:
+  - Flutter (1.0.0)
+  - image_picker_modern (0.0.1):
+    - Flutter
+  - path_provider (0.0.1):
+    - Flutter
+  - wc_flutter_share (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - image_picker_modern (from `.symlinks/plugins/image_picker_modern/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - wc_flutter_share (from `.symlinks/plugins/wc_flutter_share/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  image_picker_modern:
+    :path: ".symlinks/plugins/image_picker_modern/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  wc_flutter_share:
+    :path: ".symlinks/plugins/wc_flutter_share/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  image_picker_modern: 40bc7d164e23451a0417e302e514746a2b81c269
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  wc_flutter_share: 4f17b4e14f1c34b1427495583af99a21c07fccf7
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
